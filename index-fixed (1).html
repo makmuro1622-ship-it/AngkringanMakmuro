@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Angkringan MAKMUR</title>
+  <link rel="icon" href="Woomakmuro.png" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #eee;
+      overflow: hidden; /* Mencegah scroll ganda */
+    }
+
+    .iframe-container {
+      width: 100%;
+      height: 100dvh; /* Menggunakan dvh agar pas di mobile browser */
+      overflow: hidden;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="iframe-container">
+    <iframe
+      id="app"
+      src=""
+      scrolling="yes"
+      allowfullscreen="true"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allow="fullscreen; camera; microphone; display-capture; geolocation;">
+    </iframe>
+  </div>
+
+  <script>
+    // Ambil query string dari URL GitHub Pages (misal ?admin=true)
+    // dan teruskan ke URL GAS di dalam iframe.
+    var baseUrl = "https://script.google.com/macros/s/AKfycbyjlF2fHKWiSa2F1UINStD2_s94pLV-R32FreCL3lLQVA7PiNnGCcPYCpphw-Qacp1W/exec";
+    var queryString = window.location.search; // contoh: "?admin=true"
+    document.getElementById("app").src = baseUrl + queryString;
+  </script>
+</body>
+</html>
